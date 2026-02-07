@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./styles/app.css";
+import Login from "./pages/Login";
+import Quiz from "./pages/Quiz";
+import Result from "./pages/Result";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [user, setUser] = useState(null);
+  const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+    if (savedUser) {
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch {
+        setUser({ username: savedUser });
+      }
+    }
+  }, []);
+
+  if (!user) return <Login onLogin={setUser} />;
+
+  if (result) {
+    return (
+      <Result
+        user={user}
+        result={result}
+        onRestart={() => setResult(null)}
+      />
+    );
+  }
+
+  return <Quiz user={user} setResult={setResult} />;
 }
 
 export default App;

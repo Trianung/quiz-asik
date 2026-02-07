@@ -1,0 +1,122 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #547792, #94B4C1);
+  min-height: 100vh;
+}
+
+/* CONTAINER UTAMA */
+.container {
+  max-width: 520px;
+  margin: 80px auto;
+  background: #fdf6e9;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* JUDUL */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+/* BUTTON UMUM */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* BUTTON PRIMARY */
+.btn-primary {
+  background: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #125aa0;
+}
+
+/* BUTTON SECONDARY */
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #565e64;
+}
+
+/* TIMER */
+.timer {
+  text-align: right;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+/* INFO SOAL */
+.question-info {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* SOAL */
+.question {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* JAWABAN */
+.answer-btn {
+  background: #4988C4;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.answer-btn:hover {
+  background: #dee2e6;
+}
+
+/* RESULT */
+.result p {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .container {
+    margin: 40px 16px;
+    padding: 20px;
+  }
+}
